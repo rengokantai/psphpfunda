@@ -2,6 +2,11 @@
 require 'L9_info.php';
 $que = "SELECT name from testphp";
 $res = $connection->query($que);
+if($_POST['comments']!=""){
+    header('Location:L9_result.php');
+}else{
+    $err = "validate";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +15,7 @@ $res = $connection->query($que);
     <title>Title</title>
 </head>
 <body>
-<form action="final.php">
+<form action="index.php">
     <select name="author" id="author">
        <?php while($single = $res->fetch_assoc()):?>
         <option value="<?=$single['name']?>"><?= $single['name']?></option>

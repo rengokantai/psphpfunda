@@ -6,5 +6,5 @@
  * Time: 15:27
  */
 
-print_r($_POST['name']);
+print_r($_POST['author']);
 ?>
